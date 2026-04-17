@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+coverage/
+tests/_tmp_memory/
+.vite/
+node_modules/.vite/

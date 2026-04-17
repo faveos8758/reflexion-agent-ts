@@ -1,0 +1,54 @@
+{
+  "name": "reflexion-agent-ts",
+  "version": "1.0.0",
+  "description": "Self-improving TypeScript agent with the Reflexion pattern (learn from mistakes)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "node ./node_modules/typescript/bin/tsc",
+    "dev": "node ./node_modules/tsx/dist/cli.mjs watch src/api/server.ts",
+    "start": "node dist/api/server.js",
+    "cli": "node ./node_modules/tsx/dist/cli.mjs src/cli/index.ts",
+    "test": "node ./node_modules/vitest/vitest.mjs run",
+    "test:watch": "node ./node_modules/vitest/vitest.mjs",
+    "test:reflexion": "node ./node_modules/vitest/vitest.mjs run tests/reflexion.test.ts",
+    "test:memory": "node ./node_modules/vitest/vitest.mjs run tests/memory.test.ts",
+    "test:api": "node ./node_modules/vitest/vitest.mjs run tests/api.test.ts",
+    "example:code": "node ./node_modules/tsx/dist/cli.mjs src/examples/code-fix.ts",
+    "example:math": "node ./node_modules/tsx/dist/cli.mjs src/examples/math.ts"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "reflexion",
+    "typescript",
+    "vercel-ai-sdk"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@ai-sdk/openai": "^3.0.0",
+    "ai": "^6.0.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  }
+}
